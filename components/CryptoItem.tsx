@@ -14,8 +14,7 @@ const CryptoItem: React.FC<CryptoListProps> = ({ item, onPress }) => {
       <View style={styles.container}>
         <View>
           <Text style={styles.name}>{item.name}</Text>
-          <Text style={styles.price}>${item.price_usd}</Text>
-          <Text style={styles.change}>{item.percent_change_24h}% (24h)</Text>
+          <Text style={styles.price}>{item.price_usd} USD</Text>
         </View>
         <View style={styles.symbolContainer}>
           <Text style={styles.symbol}>{item.symbol}</Text>

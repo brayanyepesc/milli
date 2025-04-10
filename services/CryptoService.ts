@@ -7,7 +7,7 @@ class CryptoService {
       const response = await axios.get(`https://api.coinlore.com/api/tickers/`);
       if (!response.data?.data)
         throw new Error("Estructura de respuesta inválida");
-      return response.data.data;
+      return response.data.data.map(Crypto.fromJson);
     } catch (error) {
       throw new Error("Error al obtener criptomonedas");
     }
@@ -19,7 +19,7 @@ class CryptoService {
       );
       if (!response.data[0])
         throw new Error("Estructura de respuesta inválida");
-      return response.data[0];
+      return Crypto.fromJson(response.data[0]);
     } catch (error) {
       throw new Error("Error al obtener criptomonedas");
     }
