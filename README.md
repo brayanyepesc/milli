@@ -57,6 +57,8 @@ Esta aplicación React Native muestra una lista de criptomonedas, su valor en US
     
     ```
 
-## Pruebas Unitarias
+## Screenshots 
+![WhatsApp Image 2025-04-10 at 11 59 44](https://github.com/user-attachments/assets/4695294e-768d-4fff-b0d7-177f3b1b5801)
+![WhatsApp Image 2025-04-10 at 11 59 46](https://github.com/user-attachments/assets/9e7b036c-8341-4897-87a7-27331fe01452)
+![WhatsApp Image 2025-04-10 at 11 59 44](https://github.com/user-attachments/assets/8a93e519-3022-4f46-9898-4afcc11309a1)
 
-Para ejecutar las pruebas unitarias, utiliza el siguiente comando:
