@@ -17,4 +17,8 @@ export default class Crypto {
     public tsupply: string,
     public msupply: string
   ) {}
+  get formattedPrice(): string {
+    const price = parseFloat(this.price_usd);
+    return isNaN(price) ? "N/A" : `$${price.toFixed(2)}`;
+  }
 }
