@@ -3,13 +3,27 @@ import axios from "axios";
 
 class CryptoService {
   async getCryptos(): Promise<Crypto[]> {
-    const response = await axios.get(`https://api.coinlore.com/api/tickers/`);
-    return response.data.data;
+    try {
+      const response = await axios.get(`https://api.coinlore.com/api/tickers/`);
+      if (!response.data?.data)
+        throw new Error("Estructura de respuesta inválida");
+      return response.data.data;
+    } catch (error) {
+      throw new Error("Error al obtener criptomonedas");
+    }
   }
-  //   async getCryptoDetail(id: string): Promise<Crypto> {
-  //     const response = await axios.get(`${this.API_URL}/ticker/?id=${id}`);
-  //     return new Crypto(response.data[0]);
-  //   }
+  async getCryptoDetail(id: string): Promise<Crypto> {
+    try {
+      const response = await axios.get(
+        `https://api.coinlore.com/api/ticker/?id=${id}`
+      );
+      if (!response.data[0])
+        throw new Error("Estructura de respuesta inválida");
+      return response.data[0];
+    } catch (error) {
+      throw new Error("Error al obtener criptomonedas");
+    }
+  }
 }
 
 export default new CryptoService();
