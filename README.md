@@ -1,50 +1,62 @@
-# Welcome to your Expo app 👋
+# Milli - React Native
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+## Descripción
 
-## Get started
+Esta aplicación React Native muestra una lista de criptomonedas, su valor en USD, permite filtrar la lista y mostrar detalles de cada criptomoneda.
 
-1. Install dependencies
+## Características
 
-   ```bash
-   npm install
-   ```
+*   **Listado de Criptomonedas:** Muestra las criptomonedas obtenidas desde la API de Coinlore.
+*   **Conversión a USD:** Todos los valores se muestran en dólares estadounidenses (USD).
+*   **Filtro:** Permite filtrar la lista de criptomonedas por nombre.
+*   **Detalles:** Al hacer clic en un item, se muestra un modal con información detallada de la criptomoneda.
+*   **Arquitectura OOP:** Estructura del código orientada a objetos para mejor organización y mantenibilidad.
+*   **TypeScript:** Uso de TypeScript para tipado estático y detección temprana de errores.
+*   **Pruebas Unitarias:** Tests unitarios con Jest para asegurar la calidad del código.
+*   **Variables de Entorno:** Configuración de variables de entorno con `react-native-dotenv` para gestionar la API key y otros valores sensibles.
 
-2. Start the app
+## Tecnologías Utilizadas
 
-   ```bash
-    npx expo start
-   ```
+*   React Native
+*   TypeScript
+*   Axios
+*   React Navigation
+*   Jest
+*   react-native-dotenv
 
-In the output, you'll find options to open the app in a
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+## Configuración
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+1.  **Clona el repositorio:**
 
-## Get a fresh project
+    ```
+    git clone [URL del repositorio]
+    cd CryptoApp
+    ```
 
-When you're ready, run:
+2.  **Instala las dependencias:**
 
-```bash
-npm run reset-project
-```
+    ```
+    npm install
+    # o
+    yarn install
+    ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+3.  **Configura las variables de entorno:**
 
-## Learn more
+    *   Crea un archivo `.env` en la raíz del proyecto.
+    *   Añade las variables de entorno necesarias:
 
-To learn more about developing your project with Expo, look at the following resources:
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+## Ejecución
 
-## Join the community
+1.  **Inicia el bundler de Metro:**
 
-Join our community of developers creating universal apps.
+    ```
+    npm run start
+    
+    ```
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+## Pruebas Unitarias
+
+Para ejecutar las pruebas unitarias, utiliza el siguiente comando:
