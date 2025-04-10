@@ -12,10 +12,14 @@ const CryptoItem: React.FC<CryptoListProps> = ({ item, onPress }) => {
   return (
     <TouchableOpacity onPress={() => onPress && onPress(item.id)}>
       <View style={styles.container}>
-        <Text style={styles.name}>{item.name}</Text>
-        <Text style={styles.symbol}>{item.symbol}</Text>
-        <Text style={styles.price}>${item.price_usd}</Text>
-        <Text style={styles.change}>{item.percent_change_24h}% (24h)</Text>
+        <View>
+          <Text style={styles.name}>{item.name}</Text>
+          <Text style={styles.price}>${item.price_usd}</Text>
+          <Text style={styles.change}>{item.percent_change_24h}% (24h)</Text>
+        </View>
+        <View style={styles.symbolContainer}>
+          <Text style={styles.symbol}>{item.symbol}</Text>
+        </View>
       </View>
     </TouchableOpacity>
   );
@@ -26,10 +30,21 @@ const styles = StyleSheet.create({
     padding: 15,
     borderBottomWidth: 1,
     borderBottomColor: "#eee",
+    gap: 4,
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
   },
   name: {
     fontSize: 18,
     fontWeight: "bold",
+  },
+  symbolContainer: {
+    backgroundColor: "#f0f0f0",
+    borderRadius: 10,
+    padding: 8,
+    alignItems: "center",
   },
   symbol: {
     fontSize: 14,

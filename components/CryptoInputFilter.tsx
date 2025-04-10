@@ -18,9 +18,9 @@ export default function CryptoFilter({ value, onChange }: Props) {
 
 const styles = StyleSheet.create({
   input: {
-    margin: 16,
+    margin: 0,
     padding: 10,
-    borderRadius: 8,
+    borderRadius: 10,
     borderWidth: 1,
     borderColor: "#ccc",
     backgroundColor: "#fff",
