@@ -1,16 +1,21 @@
-import { StyleSheet, Image, Platform } from 'react-native';
+import { StyleSheet, Linking, Button } from "react-native";
 
-import { Collapsible } from '@/components/Collapsible';
-import { ExternalLink } from '@/components/ExternalLink';
-import ParallaxScrollView from '@/components/ParallaxScrollView';
-import { ThemedText } from '@/components/ThemedText';
-import { ThemedView } from '@/components/ThemedView';
-import { IconSymbol } from '@/components/ui/IconSymbol';
+import { Collapsible } from "@/components/Collapsible";
+import { ExternalLink } from "@/components/ExternalLink";
+import ParallaxScrollView from "@/components/ParallaxScrollView";
+import { ThemedText } from "@/components/ThemedText";
+import { ThemedView } from "@/components/ThemedView";
+import { IconSymbol } from "@/components/ui/IconSymbol";
 
 export default function TabTwoScreen() {
+  const handleDownloadCV = () => {
+    Linking.openURL(
+      "https://drive.google.com/file/d/1RksSl13KPS_UQ8FhFKvnxuXrhXq_6RXw/view?usp=sharing"
+    );
+  };
   return (
     <ParallaxScrollView
-      headerBackgroundColor={{ light: '#D0D0D0', dark: '#353636' }}
+      headerBackgroundColor={{ light: "#D0D0D0", dark: "#353636" }}
       headerImage={
         <IconSymbol
           size={310}
@@ -18,28 +23,23 @@ export default function TabTwoScreen() {
           name="chevron.left.forwardslash.chevron.right"
           style={styles.headerImage}
         />
-      }>
+      }
+    >
       <ThemedView style={styles.titleContainer}>
         <ThemedText type="title">Brayan Yepes</ThemedText>
       </ThemedView>
       <ThemedText>Acá puedes ver mi información</ThemedText>
       <Collapsible title="LinkedIn">
-        <ThemedText>
-          <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText>
-        </ThemedText>
-        <ThemedText>
-          The layout file in <ThemedText type="defaultSemiBold">app/(tabs)/_layout.tsx</ThemedText>{' '}
-          sets up the tab navigator.
-        </ThemedText>
-        <ExternalLink href="https://docs.expo.dev/router/introduction">
-          <ThemedText type="link">Learn more</ThemedText>
+        <ThemedText>Visita mi perfil profesional:</ThemedText>
+        <ExternalLink href="https://www.linkedin.com/in/brayan-yepes/">
+          {" "}
+          {/* 🔁 Cambia al tuyo */}
+          <ThemedText type="link">linkedin.com/in/brayan-yepes</ThemedText>
         </ExternalLink>
       </Collapsible>
-      <Collapsible title="Android, iOS, and web support">
-        <ThemedText>
-          You can open this project on Android, iOS, and the web. To open the web version, press{' '}
-          <ThemedText type="defaultSemiBold">w</ThemedText> in the terminal running this project.
-        </ThemedText>
+
+      <Collapsible title="Mi cv">
+        <Button title="Descargar CV" onPress={handleDownloadCV} />
       </Collapsible>
     </ParallaxScrollView>
   );
@@ -47,13 +47,13 @@ export default function TabTwoScreen() {
 
 const styles = StyleSheet.create({
   headerImage: {
-    color: '#808080',
+    color: "#808080",
     bottom: -90,
     left: -35,
-    position: 'absolute',
+    position: "absolute",
   },
   titleContainer: {
-    flexDirection: 'row',
+    flexDirection: "row",
     gap: 8,
   },
 });
