@@ -9,9 +9,7 @@ import { IconSymbol } from "@/components/ui/IconSymbol";
 
 export default function TabTwoScreen() {
   const handleDownloadCV = () => {
-    Linking.openURL(
-      "https://drive.google.com/file/d/1RksSl13KPS_UQ8FhFKvnxuXrhXq_6RXw/view?usp=sharing"
-    );
+    Linking.openURL(process.env.CV_URL || "");
   };
   return (
     <ParallaxScrollView
@@ -30,16 +28,14 @@ export default function TabTwoScreen() {
       </ThemedView>
       <ThemedText>Acá puedes ver mi información</ThemedText>
       <Collapsible title="LinkedIn">
-        <ThemedText>Visita mi perfil profesional:</ThemedText>
-        <ExternalLink href="https://www.linkedin.com/in/brayan-yepes/">
-          {" "}
-          {/* 🔁 Cambia al tuyo */}
-          <ThemedText type="link">linkedin.com/in/brayan-yepes</ThemedText>
+        <ExternalLink href="https://www.linkedin.com/in/brayan-yepesc">
+          <ThemedText type="link">BrayanYepes</ThemedText>
         </ExternalLink>
       </Collapsible>
-
       <Collapsible title="Mi cv">
-        <Button title="Descargar CV" onPress={handleDownloadCV} />
+        <ThemedView style={styles.button}>
+          <Button title="Descargar CV" onPress={handleDownloadCV} />
+        </ThemedView>
       </Collapsible>
     </ParallaxScrollView>
   );
@@ -55,5 +51,8 @@ const styles = StyleSheet.create({
   titleContainer: {
     flexDirection: "row",
     gap: 8,
+  },
+  button: {
+    alignItems: "flex-start",
   },
 });
